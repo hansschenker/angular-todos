@@ -1,0 +1,12 @@
+<div class="todo-list-actions">
+  <todo-form (addTodo)="addTodo($event)"></todo-form>
+  <todo-search (search)="searchTodos($event)"></todo-search>
+</div>
+<ul>
+  <todo-item
+    *ngFor="let todo of todos$ | async"
+    [todo]="todo"
+    (toggleTodo)="toggleTodo(todo, $event)"
+    (deleteTodo)="deleteTodo(todo)">
+  </todo-item>
+</ul>
